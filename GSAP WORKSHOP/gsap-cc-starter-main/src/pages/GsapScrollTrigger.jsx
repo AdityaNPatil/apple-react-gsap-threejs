@@ -1,8 +1,57 @@
+import { useRef } from "react";
+import { Link } from "react-router-dom";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
+/*
+  STEPS
+  - register plugin of ScrollTrigger with gsap
+  - take the element on which we have to apply scroll trigger using useRef hook
+  - use gsap.util.toArray() to store the elemenets on which scrollTrigger needed into a variable
+  - Loop over the array of elements for scrollTrigger
+  - use scrollTrigger inside gsap.to/from/fromTo method
+*/
+
+// ◘◘ register ScrollTrigger with gsap
+import { ScrollTrigger } from "gsap/all"; 
+gsap.registerPlugin(ScrollTrigger);
+
 const GsapScrollTrigger = () => {
   // TODO: Implement the gsap scroll trigger
 
+  // ◘ create a reference to the element we want to use for scroll trigger
+  const scrollRef = useRef(null);
+
+  useGSAP(()=>{
+
+    // ◘ access the boxes -- as an array
+    const boxes = gsap.utils.toArray(scrollRef.current.children)
+
+    // ◘ run gsap.to method for each box
+    boxes.forEach((box)=>{
+      gsap.to(box, {
+        x:150 * (boxes.indexOf(box) + 5),
+        rotation:360,
+        borderRadius:"100%",
+        scale:1.7,
+        // scrollTrigger
+        scrollTrigger:{
+          trigger:box,      // on which element to apply trigger
+          markers: true,    // displayed on webpage to show where the trigger starts and ends
+          start: "bottom bottom", // String | Number | Function - Determines the starting position . -- here when bottom of box meets bottom of viewport
+          end: "top 20%",      // String | Number | Function - Determines the ending position . -- here when top of box hits 20% of viewport 
+          scrub: true       // scrub: true links the animation's progress directly to the ScrollTrigger's progress.
+          // (scrub:Number) The amount of time (in seconds) that the playhead should take to "catch up"
+        },
+        ease:"power1.inOut"
+      })
+    })
+  } , {scope : scrollRef})  // ◘ define when the useGSAP hook triggers
+
   return (
     <main>
+      <Link to={"/"}> <small>Home</small> </Link>
       <h1>GsapScrollTrigger</h1>
 
       <p className="mt-5 text-gray-500">
@@ -51,7 +100,7 @@ const GsapScrollTrigger = () => {
         </svg>
       </div>
 
-      <div className="mt-20 w-full h-screen">
+      <div ref={scrollRef} className="mt-20 w-full h-screen">
         <div
           id="scroll-pink"
           className="scroll-box w-20 h-20 rounded-lg bg-pink-500"

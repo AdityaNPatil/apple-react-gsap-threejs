@@ -1,8 +1,25 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { Link } from "react-router-dom";
+
 const GsapFrom = () => {
   // TODO: Implement the gsap.from() method
 
+  useGSAP(()=>{
+    gsap.from("#green-box",{
+      y: 500,               // from 500px in y axis to original pos
+      backgroundColor : "red",
+      borderTopRightRadius: 80,
+      duration: 1,
+      ease: "power1.inOut",
+      repeat: -1,
+      yoyo: true,
+    })
+  })
+
   return (
     <main>
+      <Link to={"/"}> <small>Home</small> </Link>
       <h1>GsapFrom</h1>
 
       <p className="mt-5 text-gray-500">
@@ -30,6 +47,7 @@ const GsapFrom = () => {
         method.
       </p>
 
+      {/* box with id green-box to be animated */}
       <div className="mt-20">
         <div id="green-box" className="w-20 h-20 bg-green-500 rounded-lg" />
       </div>

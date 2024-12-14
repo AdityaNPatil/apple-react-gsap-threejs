@@ -15,7 +15,7 @@ const GsapFrom = () => {
       repeat: -1,
       yoyo: true,
     })
-  })
+  },[])
 
   return (
     <main>

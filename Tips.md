@@ -32,5 +32,7 @@ export const chipImg = chip;
 export const frameImg = frame;
 ```
 
+## Constants in (constants/index.js)
+- Store arrays of information within them 
 
 For more [Snippets of Project](https://github.com/adrianhajdin/iphone/blob/main/README.md#%EF%B8%8F-snippets)

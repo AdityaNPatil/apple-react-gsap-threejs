@@ -67,3 +67,6 @@
 
 # Framer Motion
 - Best for SIMPLE GESTURE BASED NAVIGATIONS
+
+# Credits 
+[JSM](https://github.com/adrianhajdin)

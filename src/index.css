@@ -90,27 +90,27 @@ canvas {
     @apply text-center font-semibold text-3xl text-gray-100 opacity-0 max-md:mb-10
   }
 
-  .hero-title {
+  .hiw-title {
     @apply text-4xl md:text-7xl font-semibold text-center
   }
 
-  .hero-subtitle {
+  .hiw-subtitle {
     @apply text-gray font-semibold text-xl md:text-2xl py-10 text-center
   }
 
-  .hero-video {
+  .hiw-video {
     @apply absolute w-[95%] h-[90%] rounded-[56px] overflow-hidden
   }
 
-  .hero-text-container {
+  .hiw-text-container {
     @apply flex md:flex-row flex-col justify-between items-start gap-24
   }
 
-  .hero-text {
+  .hiw-text {
     @apply text-gray text-xl font-normal md:font-semibold
   }
 
-  .hero-bigtext {
+  .hiw-bigtext {
     @apply text-white text-3xl md:text-5xl font-normal md:font-semibold my-2
   }
 

@@ -36,3 +36,11 @@ export const frameImg = frame;
 - Store arrays of information within them 
 
 For more [Snippets of Project](https://github.com/adrianhajdin/iphone/blob/main/README.md#%EF%B8%8F-snippets)
+
+## Direct return in .map
+```javascript
+{hightlightsSlides.map((highlight,idx)=>(   
+ // direct parantheses used no return needed        --- instead of { return( jsx ) }
+)
+)}
+```

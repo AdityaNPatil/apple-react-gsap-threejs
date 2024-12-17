@@ -54,6 +54,7 @@ const Hero = () => {
 
         {/* video */}
         <div className="md:w-10/12 w-9/12">
+          {/* playInLine plays video only when its in view */}
           <video autoPlay muted playsInline={true} key={videoSrc} className="pointer-events-none"> {/*pointer-events-none disables pointer events on video*/}
             {/* heroVideo for normal screen , smallHeroVideo for mobile small screen ....  type for video extremely necessary*/}
             <source src={videoSrc} type="video/mp4" />

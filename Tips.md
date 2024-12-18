@@ -44,3 +44,6 @@ For more [Snippets of Project](https://github.com/adrianhajdin/iphone/blob/main/
 )
 )}
 ```
+
+## Install ThreeJS
+`npm i three @react-three/drei @react-three/fiber`

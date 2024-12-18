@@ -47,3 +47,6 @@ For more [Snippets of Project](https://github.com/adrianhajdin/iphone/blob/main/
 
 ## Install ThreeJS
 `npm i three @react-three/drei @react-three/fiber`
+
+## GLTF scene to JSX
+ThreeJS Gltf scene to JSX using [repo](https://github.com/pmndrs/gltfjsx) [link](https://gltf.pmnd.rs/ )

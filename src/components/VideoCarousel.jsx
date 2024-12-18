@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react"
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { pauseImg, playImg, replayImg } from "../utils";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 // hightlightsSlides from constants
 import { hightlightsSlides } from "../constants"

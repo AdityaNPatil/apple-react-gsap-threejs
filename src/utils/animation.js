@@ -8,6 +8,7 @@ export const animateWithGsap = (target, animationProps, scrollProps) => {
         ...animationProps,
         scrollTrigger: {
             trigger: target,
+            // how the animation behaves when it hits the viewport (enter leave enterBack leaveBack)
             toggleActions: 'restart reverse restart reverse',
             start: 'top 85%',
             ...scrollProps,

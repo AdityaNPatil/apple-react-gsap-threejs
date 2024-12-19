@@ -10,8 +10,11 @@ import { View } from "@react-three/drei";
 // import Component
 import ModelView from "./ModelView"
 
+// import animateWithGsapTimeline
+import {animateWithGsapTimeline} from "../utils/animation"
+
 // Hooks
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 // images & constant data
 import { yellowImg } from "../utils"
@@ -40,6 +43,28 @@ const Model = () => {
     // keep track of ◘ Rotation value
     const [smallRotation, setSmallRotation] = useState(0);
     const [largeRotation, setLargeRotation] = useState(0);
+
+    // timeline create -- switch between models (larger and small)
+    const timeline = gsap.timeline();
+    // get animation from animation.js (utils)
+    useEffect(() => {
+        // if size is large then animate to small model
+        if(size==='large'){
+            // animate from view1 to view2 and translate -100% on x axis
+            animateWithGsapTimeline(timeline,small,smallRotation,'#view1','#view2',{
+                transform: 'translateX(-100%)',
+                duration:2
+            })
+        }
+        // if size is small then animate to large model
+        if(size==='small'){
+            // animate from view2 to view1 and translate 0 on x axis
+            animateWithGsapTimeline(timeline,large,largeRotation,'#view2','#view1',{
+                transform: 'translateX(0)',
+                duration:2
+            })
+        }
+    },[size]);
 
     useGSAP(() => {
         gsap.to("#heading", {

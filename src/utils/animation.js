@@ -3,6 +3,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
 gsap.registerPlugin(ScrollTrigger);
 
+// DRY principle -- use GSAP for ScrollTrigger animations
 export const animateWithGsap = (target, animationProps, scrollProps) => {
     gsap.to(target, {
         ...animationProps,

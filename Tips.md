@@ -50,3 +50,11 @@ For more [Snippets of Project](https://github.com/adrianhajdin/iphone/blob/main/
 
 ## GLTF scene to JSX
 ThreeJS Gltf scene to JSX using [repo](https://github.com/pmndrs/gltfjsx) [link](https://gltf.pmnd.rs/ )
+
+## Optimized Code for DRY Principle (Dont repeat yourself)
+```javascript
+// optimized -- DRY principle -- use GSAP for ScrollTrigger animations from utils/animations.js
+    useGSAP(()=>{
+        animateWithGsap("#features_title", {y:0 , opacity:1})
+    }, [])
+```

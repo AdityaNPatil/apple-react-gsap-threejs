@@ -13,6 +13,7 @@ import { useGLTF, useTexture } from "@react-three/drei";
 function Model(props) {
   const { nodes, materials } = useGLTF("/models/scene.glb");
 
+  // set mesh for the phone model
   const texture = useTexture(props.item.img);
 
     useEffect(() => {
@@ -145,6 +146,7 @@ function Model(props) {
         material={materials.pIJKfZsazmcpEiU}
         scale={0.01}
       >
+        {/* set correct color for front screen */}
         <meshStandardMaterial roughness={1} map={texture} />
       </mesh>
       <mesh

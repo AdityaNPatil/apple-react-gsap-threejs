@@ -54,6 +54,7 @@ const HowItWorks = () => {
 
                 <div className="mt-10 md:mt-20 mb-14">
                     <div className="relative h-full flex-center">
+                        {/* phone image */}
                         <div className="overflow-hidden">
                             <img
                                 src={frameImg}
@@ -61,6 +62,7 @@ const HowItWorks = () => {
                                 className="bg-transparent relative z-10"
                             />
                         </div>
+                        {/* phone video */}
                         <div className="hiw-video">
                             <video className="pointer-events-none" playsInline preload="none" muted autoPlay ref={videoRef}>
                                 <source src={frameVideo} type="video/mp4" />
@@ -70,6 +72,7 @@ const HowItWorks = () => {
                     <p className="text-gray font-semibold text-center mt-3">Honkai: Star Rail</p>
                 </div>
 
+                {/* text to fade in */}
                 <div className="hiw-text-container">
                     <div className="flex flex-1 justify-center flex-col">
                         <p className="hiw-text g_fadeIn">

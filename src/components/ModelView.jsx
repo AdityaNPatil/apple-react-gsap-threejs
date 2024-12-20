@@ -7,7 +7,7 @@ import { Suspense } from "react"
 import Lights from "./Lights"
 
 // actual model
-import IPhone from './iPhone';
+import IPhone from './IPhone';
 
 // Loader component
 import Loader from "./Loader";

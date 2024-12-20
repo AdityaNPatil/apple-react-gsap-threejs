@@ -25,6 +25,21 @@ const HowItWorks = () => {
             ease: "power2.inOut"
         })
 
+        animateWithGsap(".hiw-video",
+            {
+                ease: "power2.inOut",
+                onComplete: ()=>{
+                    videoRef.current.play();
+                }
+            },
+            {
+                trigger: ".hiw-video",
+                start: "top 50%",
+                end: "bottom 50%",
+                toggleActions: "play pause play restart",
+            }
+        )
+
         animateWithGsap('.g_fadeIn', {
             opacity: 1,
             y: 0,
